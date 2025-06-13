@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.tbFajta = new System.Windows.Forms.TextBox();
+            this.numEvjarat = new System.Windows.Forms.NumericUpDown();
+            this.numAlkohol = new System.Windows.Forms.NumericUpDown();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelKiir = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,48 +40,62 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEvjarat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAlkohol)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbFajta
             // 
-            this.textBox1.Location = new System.Drawing.Point(511, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbFajta.Location = new System.Drawing.Point(511, 64);
+            this.tbFajta.Name = "tbFajta";
+            this.tbFajta.Size = new System.Drawing.Size(100, 20);
+            this.tbFajta.TabIndex = 0;
             // 
-            // numericUpDown1
+            // numEvjarat
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(511, 133);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.numEvjarat.Location = new System.Drawing.Point(511, 133);
+            this.numEvjarat.Maximum = new decimal(new int[] {
+            2025,
+            0,
+            0,
+            0});
+            this.numEvjarat.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numEvjarat.Name = "numEvjarat";
+            this.numEvjarat.Size = new System.Drawing.Size(120, 20);
+            this.numEvjarat.TabIndex = 1;
+            this.numEvjarat.Value = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown2
+            // numAlkohol
             // 
-            this.numericUpDown2.DecimalPlaces = 1;
-            this.numericUpDown2.Location = new System.Drawing.Point(511, 206);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 2;
+            this.numAlkohol.DecimalPlaces = 1;
+            this.numAlkohol.Location = new System.Drawing.Point(511, 206);
+            this.numAlkohol.Name = "numAlkohol";
+            this.numAlkohol.Size = new System.Drawing.Size(120, 20);
+            this.numAlkohol.TabIndex = 2;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(42, 34);
+            this.listBox1.Location = new System.Drawing.Point(12, 30);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(232, 329);
+            this.listBox1.Size = new System.Drawing.Size(372, 329);
             this.listBox1.TabIndex = 3;
             // 
-            // label1
+            // labelKiir
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(350, 262);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.labelKiir.AutoSize = true;
+            this.labelKiir.Location = new System.Drawing.Point(437, 254);
+            this.labelKiir.Name = "labelKiir";
+            this.labelKiir.Size = new System.Drawing.Size(0, 13);
+            this.labelKiir.TabIndex = 4;
             // 
             // label2
             // 
@@ -115,42 +129,50 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(353, 308);
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(12, 391);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 36);
             this.button1.TabIndex = 8;
             this.button1.Text = "Bor hozzáadása";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(557, 308);
+            this.button2.BackColor = System.Drawing.Color.Firebrick;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(150, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 36);
             this.button2.TabIndex = 9;
             this.button2.Text = "Bor törlése";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(319, 364);
+            this.button3.BackColor = System.Drawing.Color.Firebrick;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Location = new System.Drawing.Point(304, 391);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(182, 36);
             this.button3.TabIndex = 10;
             this.button3.Text = "Statisztika megjelenítése";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(539, 364);
+            this.button4.BackColor = System.Drawing.Color.Firebrick;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.Location = new System.Drawing.Point(511, 391);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(165, 36);
             this.button4.TabIndex = 11;
             this.button4.Text = "Átlagos alkoholtartalom";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
@@ -166,15 +188,15 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelKiir);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.numAlkohol);
+            this.Controls.Add(this.numEvjarat);
+            this.Controls.Add(this.tbFajta);
             this.Name = "Form1";
             this.Text = "Borospince";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEvjarat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAlkohol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,11 +204,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.TextBox tbFajta;
+        private System.Windows.Forms.NumericUpDown numEvjarat;
+        private System.Windows.Forms.NumericUpDown numAlkohol;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelKiir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

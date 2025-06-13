@@ -54,7 +54,7 @@ namespace Borospince
             }
         }
         //Átlag számolás
-        public double atlag_alkoholtartalom(Szekreny szekreny)
+        public double Atlag_alkoholtartalom(Szekreny szekreny)
         {
             if(borok.Count == 0)
             {
@@ -81,8 +81,8 @@ namespace Borospince
             else
             {
                 return borok
-               .GroupBy(a => a.Fajta.ToLower())
-               .ToDictionary(b => b.Key, b => b.Count());
+                       .GroupBy(a => a.Fajta.ToLower())
+                       .ToDictionary(gr => gr.Key, gr => gr.Count());
             }
         }
 
@@ -91,18 +91,15 @@ namespace Borospince
         {
             if (b is Bor bor)
             {
-                for(int i = 0;i < borok.Count; i++)
+                try
                 {
-                    if(b == borok[i])
-                    {
-                        borok.Remove(bor);
-                    }
-                    else
-                    {
-                        throw new BorospinceException("Bor nem található!");
-                    }
+                    borok.Remove(bor);
                 }
-                
+                catch(BorospinceException ex)
+                {
+                    throw new BorospinceException("Bor nem található!");
+                }
+  
             }
             else
             {
