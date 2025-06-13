@@ -22,19 +22,9 @@ namespace Borospince
             }
             return borok[n];
         }
-        public override bool Equals(object obj)
-        {
-            if (obj is Bor bor)
-            {
-                borok.Add((Bor)obj); return true;
-            }
-            else
-            {
-                throw new TypeAccessException("Nem bor!");
-            }
-        }
+       
 
-        /*public static Szekreny operator +(Szekreny s, object b)
+        public static Szekreny operator +(Szekreny s, object b)
         {
             if (b is Bor bor)
             {
@@ -47,7 +37,7 @@ namespace Borospince
             }
                
             return s;
-        }*/
+        }
         public static Szekreny operator +(Szekreny sz1, Szekreny sz2)
         {
             if (sz1 != null)
@@ -61,7 +51,7 @@ namespace Borospince
                 throw new TypeAccessException("Nem szekrény!");
             }
         }
-
+        //Átlag számolás
         public double atlag_alkoholtartalom(Szekreny szekreny)
         {
             if(borok.Count == 0)
@@ -79,7 +69,7 @@ namespace Borospince
                 return alkoholtartalom / borok.Count;
             }
         }
-
+        //Statisztika
         public Dictionary<string, int> Statisztika()
         {
             if(borok.Count == 0)
@@ -91,6 +81,44 @@ namespace Borospince
                 return borok
                .GroupBy(a => a.Fajta.ToLower())
                .ToDictionary(b => b.Key, b => b.Count());
+            }
+        }
+
+        //Megisszák a bort
+        public void Megisszak(object b)
+        {
+            if (b is Bor bor)
+            {
+                for(int i = 0;i < borok.Count; i++)
+                {
+                    if(b == borok[i])
+                    {
+                        borok.Remove(bor);
+                    }
+                    else
+                    {
+                        throw new BorospinceException("Bor nem található!");
+                    }
+                }
+                
+            }
+            else
+            {
+                throw new TypeAccessException("Nem bor!");
+            }
+        }
+        //ToString() felülírása
+
+        public override string ToString()
+        {
+            if(borok.Count == 0)
+            {
+                return ("Ez a szekrény üres!");
+            }
+            else
+            {
+                var stat = Statisztika();
+                return string.Join(", ", stat.Select(kvp => $"{kvp.Value} {kvp.Key}"));
             }
         }
     }
