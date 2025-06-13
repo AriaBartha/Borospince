@@ -23,7 +23,7 @@ namespace Borospince
             return borok[n];
         }
        
-
+        // új bor
         public static Szekreny operator +(Szekreny s, object b)
         {
             if (b is Bor bor)
@@ -38,6 +38,8 @@ namespace Borospince
                
             return s;
         }
+
+        // új szekrény
         public static Szekreny operator +(Szekreny sz1, Szekreny sz2)
         {
             if (sz1 != null)
