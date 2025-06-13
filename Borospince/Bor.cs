@@ -36,5 +36,26 @@ namespace Borospince
                 }
             } 
         }
+        public override string ToString()
+        {
+            return $"fajta: {fajta} (évjárat: {evjarat}), melynek alkoholtartalma: {alkoholtartalom}%";
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Bor other)
+            {
+                return string.Equals(Fajta, other.Fajta, StringComparison.OrdinalIgnoreCase)
+                &&
+                Evjarat == other.Evjarat &&
+                Alkoholtartalom == other.Alkoholtartalom;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return (Fajta.ToLower(), Evjarat, Alkoholtartalom).GetHashCode();
+        }
     }
 }
+
